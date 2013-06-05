@@ -247,10 +247,10 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </div>
                         <div class="details">
                            <div class="number">
-                              2
+                              {{ .regionCount }}
                            </div>
                            <div class="desc">                           
-                              Regions
+                              Regions {{.regions}}
                            </div>
                         </div>
                         <a class="more" href="#">
@@ -264,7 +264,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                            <i class="icon-sitemap"></i>
                         </div>
                         <div class="details">
-                           <div class="number">20</div>
+                           <div class="number">{{.hostCount}}</div>
                            <div class="desc">Nodes</div>
                         </div>
                         <a class="more" href="#">
@@ -278,7 +278,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                            <i class="icon-list"></i>
                         </div>
                         <div class="details">
-                           <div class="number">60</div>
+                           <div class="number">{{.serviceCount}}</div>
                            <div class="desc">Services</div>
                         </div>
                         <a class="more" href="#">
@@ -292,7 +292,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                            <i class="icon-list-ul"></i>
                         </div>
                         <div class="details">
-                           <div class="number">70</div>
+                           <div class="number">{{.instanceCount}}</div>
                            <div class="desc">Instances</div>
                         </div>
                         <a class="more" href="#">
