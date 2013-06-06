@@ -5,6 +5,12 @@
 module:testrunner
 
 GET     /                                       App.Index
+GET		/dashboard 									App.Index
+GET		/regions								Regions.Index
+GET		/instances								Instances.Index
+GET		/nodes									Nodes.Index
+GET		/services								Services.Index
+GET		/admin									Admin.Index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
