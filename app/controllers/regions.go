@@ -15,8 +15,9 @@ func (c Regions) Index() revel.Result {
 }
 
 func (c Regions) Nodes(id string) revel.Result {
-
-	return c.Render(id)
+	revel.ERROR.Println(id)
+	hosts := models.GetHosts()
+	return c.Render(id, hosts)
 }
 func (c Regions) Instances(id string) revel.Result {
 	revel.ERROR.Println(id)

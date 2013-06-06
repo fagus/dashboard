@@ -239,8 +239,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                <i class="icon-angle-right"></i>
                            </li>
                         <li><a href="#">Regions</a></li>  
-                  
-                  
+                                 <i class="icon-angle-right"></i>
+                           </li>
+                        <li><a href="#"> {{ .id }} </a></li>  
+                        <i class="icon-angle-right"></i>
+                           </li>
+                        <li><a href="#"> Nodes </a></li>            
          </ul>
       <!-- END PAGE TITLE & BREADCRUMB-->
                </div>
@@ -249,7 +253,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             <div id="dashboard">
                <!-- BEGIN DASHBOARD STATS -->
                <div class="row-fluid">
-               {{range .regions}}
+
                   <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
                      <div class="dashboard-stat blue">
                         <div class="visual">
@@ -257,25 +261,52 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </div>
                         <div class="details">
                            <div class="number">
-                              {{ . }}
+                              {{ .id }}
                            </div>
                            <div class="desc">                           
                               Region
                            </div>
                         </div>
-                        <a class="more" href="/regions/{{.}}/services">
+                        <a class="more" href="/regions/{{.id}}/services">
                         View Services <i class="m-icon-swapright m-icon-white"></i>
                         </a>   
-                        <a class="more" href="/regions/{{.}}/instances">
+                        <a class="more" href="/regions/{{.id}}/instances">
                         View Intances <i class="m-icon-swapright m-icon-white"></i>
                         </a>  
-                        <a class="more" href="/regions/{{.}}/nodes">
+                        <a class="more" href="/regions/{{.id}}/nodes">
                         View Nodes <i class="m-icon-swapright m-icon-white"></i>
                         </a>                        
                      </div>
                   </div>
-                  {{end}}
                </div>
+               <div class="clearfix"></div>
+                          <div class="row-fluid">
+               <div class="span6">
+                  <!-- BEGIN SAMPLE TABLE PORTLET-->
+                  <div class="portlet box red">
+                     <div class="portlet-title">
+                        <div class="caption"><i class="icon-cogs"></i>Services</div>
+                     </div>
+                     <div class="portlet-body">
+                        <table class="table table-hover">
+                           <thead>
+                              <tr>
+                                 <th>Address</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              {{ range .hosts }}
+                              <tr>
+                                 <td>{{ . }}</td>
+                              </tr>
+                              {{ end }}
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+                  <!-- END SAMPLE TABLE PORTLET-->
+               </div>
+            </div>
                <!-- END DASHBOARD STATS -->
                <div class="clearfix"></div>
             </div>
