@@ -234,11 +234,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
          <ul class="breadcrumb">
             <li>
                <i class="icon-home"></i>
-               <a href="index.html">Home</a> 
+               <a href="/dashboard">Home</a> 
                               
                <i class="icon-angle-right"></i>
                            </li>
-                        <li><a href="#">Dashboard</a></li>  
+                        <li><a href="#">Regions</a></li>  
                   
                   
          </ul>
@@ -249,6 +249,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             <div id="dashboard">
                <!-- BEGIN DASHBOARD STATS -->
                <div class="row-fluid">
+               {{range .regions}}
                   <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
                      <div class="dashboard-stat blue">
                         <div class="visual">
@@ -256,59 +257,24 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
                         </div>
                         <div class="details">
                            <div class="number">
-                              {{ .regionCount }}
+                              {{ . }}
                            </div>
                            <div class="desc">                           
-                              Regions {{.regions}}
+                              Region
                            </div>
                         </div>
-                        <a class="more" href="#">
-                        View more <i class="m-icon-swapright m-icon-white"></i>
-                        </a>                 
+                        <a class="more" href="/regions/{{.}}/services">
+                        View Services <i class="m-icon-swapright m-icon-white"></i>
+                        </a>   
+                        <a class="more" href="/regions/{{.}}/instances">
+                        View Intances <i class="m-icon-swapright m-icon-white"></i>
+                        </a>  
+                        <a class="more" href="/regions/{{.}}/nodes">
+                        View Nodes <i class="m-icon-swapright m-icon-white"></i>
+                        </a>                        
                      </div>
                   </div>
-                  <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
-                     <div class="dashboard-stat green">
-                        <div class="visual">
-                           <i class="icon-sitemap"></i>
-                        </div>
-                        <div class="details">
-                           <div class="number">{{.hostCount}}</div>
-                           <div class="desc">Nodes</div>
-                        </div>
-                        <a class="more" href="#">
-                        View more <i class="m-icon-swapright m-icon-white"></i>
-                        </a>                 
-                     </div>
-                  </div>
-                  <div class="span3 responsive" data-tablet="span6  fix-offset" data-desktop="span3">
-                     <div class="dashboard-stat purple">
-                        <div class="visual">
-                           <i class="icon-list"></i>
-                        </div>
-                        <div class="details">
-                           <div class="number">{{.serviceCount}}</div>
-                           <div class="desc">Services</div>
-                        </div>
-                        <a class="more" href="#">
-                        View more <i class="m-icon-swapright m-icon-white"></i>
-                        </a>                 
-                     </div>
-                  </div>
-                  <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
-                     <div class="dashboard-stat yellow">
-                        <div class="visual">
-                           <i class="icon-list-ul"></i>
-                        </div>
-                        <div class="details">
-                           <div class="number">{{.instanceCount}}</div>
-                           <div class="desc">Instances</div>
-                        </div>
-                        <a class="more" href="#">
-                        View more <i class="m-icon-swapright m-icon-white"></i>
-                        </a>                 
-                     </div>
-                  </div>
+                  {{end}}
                </div>
                <!-- END DASHBOARD STATS -->
                <div class="clearfix"></div>

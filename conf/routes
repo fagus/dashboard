@@ -7,6 +7,9 @@ module:testrunner
 GET     /                                       App.Index
 GET		/dashboard 									App.Index
 GET		/regions								Regions.Index
+GET     /regions/{id}/nodes                     Regions.Nodes
+GET     /regions/{id}/instances                 Regions.Instances
+GET     /regions/{id}/services                  Regions.Services
 GET		/instances								Instances.Index
 GET		/nodes									Nodes.Index
 GET		/services								Services.Index
