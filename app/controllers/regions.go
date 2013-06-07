@@ -26,6 +26,6 @@ func (c Regions) Instances(id string) revel.Result {
 }
 func (c Regions) Services(id string) revel.Result {
 	revel.ERROR.Println(id)
-	instances := models.GetInstances()
-	return c.Render(id, instances)
+	services := models.GetServices()
+	return c.Render(id, services)
 }

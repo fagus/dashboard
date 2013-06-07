@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/robfig/revel"
-
+	"github.com/skynetservices/dashboard/app/models"
 )
 
 type Nodes struct {
@@ -11,5 +11,6 @@ type Nodes struct {
 
 func (c Nodes) Index() revel.Result {
 
-	return c.Render()
+	hosts := models.GetHosts()
+	return c.Render(hosts)
 }
